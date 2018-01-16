@@ -13,8 +13,14 @@ public class Radio extends javax.swing.JFrame {
     /**
      * Creates new form Radio
      */
+    private int cont;
+    private int cont1;
+    private douglas radio;
+    
     public Radio() {
         initComponents();
+        cont = 0;
+        cont1 = 0;
     }
 
     /**
@@ -49,7 +55,7 @@ public class Radio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setText("106.5");
+        jLabel1.setText("87.9");
 
         jButton1.setText(">");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +166,11 @@ public class Radio extends javax.swing.JFrame {
         jLabel2.setText("FM");
 
         jButton3.setText("ON");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Set");
 
@@ -209,7 +220,7 @@ public class Radio extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addGap(82, 82, 82)
                                 .addComponent(jButton1)))
-                        .addGap(143, 610, Short.MAX_VALUE))
+                        .addGap(143, 636, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -315,7 +326,28 @@ public class Radio extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        cont1++;
+        if (cont1 ==1) {
+            radio.Switch(true);
+        }
+        else{
+            radio.Switch(false);
+            cont1=0; 
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        cont++;
+        if (cont ==1) {
+            radio.onOff(true);
+        }
+        else{
+            radio.onOff(false);
+            cont=0; 
+        }
+                
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
