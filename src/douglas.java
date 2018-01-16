@@ -10,8 +10,6 @@
  */
 public interface douglas {
     
-
-    
     public void onOff(boolean estado);
     
     public void Switch(boolean tipo);
