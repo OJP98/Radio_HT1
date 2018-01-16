@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author JUMPSTONIK
+ * Clase que contiene los metodos llamados mediante la interzaf
+ * @author: Oscar Juárez - 17315; Josue Florian - 17
+ * @version: 19.01.18
+ * Algoritmos y Estructura de Datos - seccion: 10
  */
 
-public class RadioCongfi implements douglas{
+public class RadioCongfi implements douglas {
 
     private boolean OnOff;
     private boolean AmFm;
@@ -24,7 +20,7 @@ public class RadioCongfi implements douglas{
         // Si AmFm es verdadero = AM
         
     }
-    public void onOff(boolean estado){      
+    public void onOff(boolean estado){              
         OnOff = estado;
     }
     
@@ -34,49 +30,69 @@ public class RadioCongfi implements douglas{
         }   
     }
     
-    public float siguiente(float frecuencia){
+    public float siguiente(float frecuencia){                
         
-        if (OnOff == true) {
+        if (OnOff) {
             
-            if (AmFm == false && frecuencia <= 107.7 && frecuencia >= 87.9) {
-                frecuencia += 0.2;
-            }
-            
-            else {
+            if (AmFm) {
                 
-                frecuencia = (float) 87.9;
-            }
-            
-            if (AmFm == true && frecuencia <= 1600 && frecuencia >= 530) {
-                frecuencia += 10;
-            }
-            else {
-                frecuencia = 530;
-            }
-            
-        }   
+                if (frecuencia < 1610) {
+                    
+                    frecuencia += 10;
+                    
+                } else {
+                    
+                    frecuencia = 530;
+                    
+                }
+                
+            } else {
+                
+                if (frecuencia < 107.9) {
+                    
+                    frecuencia += 0.2;
+                    frecuencia = (float) (Math.round(frecuencia*10.0)/10.0);
+                    
+                } else {
+                    
+                    frecuencia = (float) 87.9;
+                }            
+            }          
+        }                
         
         return frecuencia;
     }
     
     public float anterior(float frecuencia){
         
-        if (OnOff == true) {
+        if (OnOff) {
             
-            if (AmFm == false && frecuencia <= 107.9 && frecuencia >= 88.1) {
-                frecuencia -= 0.2;
-            }
-            else {
-                frecuencia = (float) 107.9;
-            }   
-            
-            if (AmFm == true && frecuencia <= 1610 && frecuencia >= 540) {
-                frecuencia -= 10;
-            }
-            else {
-                frecuencia = 1610;
-            }
-        }     
+            if (AmFm) {
+                
+                if (frecuencia > 530) {
+                    
+                    frecuencia -= 10;                    
+                    
+                } else {
+                    
+                    frecuencia = 1610;
+                    
+                }
+                
+            } else {
+                
+                if (frecuencia > 88.0) {
+                    
+                    frecuencia -= 0.2;
+                    frecuencia = (float) (Math.round(frecuencia*10.0)/10.0);
+                    
+                } else {
+                    
+                    frecuencia = (float) 107.9;
+                }                
+            }            
+        }                
+        
         return frecuencia;
     }
     
@@ -87,41 +103,46 @@ public class RadioCongfi implements douglas{
      */
     public void guardar(float frecuencia, int boton){
         
-        //Si la radio es AM
-        if (AmFm) {
-            
-            favoritoAm[boton] = frecuencia;
-            
-        } else {
-            
-            favoritosFm[boton] = frecuencia;
-            
-        }
-        
+        if  (OnOff) {
+                    
+            //Si la radio es AM
+            if (AmFm) {
+
+                favoritoAm[boton] = frecuencia;            
+
+            //Si la radio es FM
+            } else {
+
+                favoritosFm[boton] = frecuencia;                        
+            }      
+        }                
     }
     
     /**
      * 
-     * @param boton: Ek boton del cual se quiere seleccionar la radio
+     * @param boton: El boton del cual se quiere seleccionar la radio
      * @return: La radio guardada en dicho boton.
      */
     public float seleccionarFav(int boton) {
         
-        float frecuenciaGuardada;
+        float frecuenciaGuardada=0;
         
-        //Si la radio es AM
-        if (AmFm) {
-            
-            frecuenciaGuardada = favoritoAm[boton];
-            
-        } else {
-            
-            frecuenciaGuardada = favoritosFm[boton];
-            
-        }
+        if (OnOff) {
         
-        return frecuenciaGuardada;
+            //Si la radio es AM
+            if (AmFm) {
+
+                frecuenciaGuardada = favoritoAm[boton];
+
+            //Si la radio es FM
+            } else {
+
+                frecuenciaGuardada = favoritosFm[boton];
+
+            }   
+        }                
         
+        return frecuenciaGuardada;        
     }    
     
 }

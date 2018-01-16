@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+import javax.swing.JOptionPane;
 
 /**
- *
- * @author Usuario
+ * Clase GUI encargada de interactuar con el usuario.
+ * @author: Oscar Juárez - 17315; Josue Florian - 17
+ * @version: 19.01.18
+ * Algoritmos y Estructura de Datos - seccion: 10
  */
 public class Radio extends javax.swing.JFrame {
 
@@ -15,12 +14,14 @@ public class Radio extends javax.swing.JFrame {
      */
     private int cont;
     private int cont1;
+    private boolean AmFm;
     private boolean power;
-    public douglas radio;    
+    douglas radio = new RadioCongfi();    
     
-    public Radio() {
+    public Radio() {        
         initComponents(); 
-        power = false;        
+        power = false;  
+        AmFm =  false;
         cont = 0;
         cont1 = 0;
     }
@@ -52,7 +53,6 @@ public class Radio extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +75,11 @@ public class Radio extends javax.swing.JFrame {
         });
 
         Emisora1.setText("1");
+        Emisora1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Emisora1MouseClicked(evt);
+            }
+        });
         Emisora1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Emisora1ActionPerformed(evt);
@@ -82,6 +87,11 @@ public class Radio extends javax.swing.JFrame {
         });
 
         Emisora2.setText("2");
+        Emisora2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Emisora2MouseClicked(evt);
+            }
+        });
         Emisora2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Emisora2ActionPerformed(evt);
@@ -89,6 +99,11 @@ public class Radio extends javax.swing.JFrame {
         });
 
         Emisora3.setText("3");
+        Emisora3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Emisora3MouseClicked(evt);
+            }
+        });
         Emisora3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Emisora3ActionPerformed(evt);
@@ -175,8 +190,6 @@ public class Radio extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Set");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -187,7 +200,7 @@ public class Radio extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Emisora1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,9 +217,7 @@ public class Radio extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Emisora10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Emisora4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -224,10 +235,8 @@ public class Radio extends javax.swing.JFrame {
                             .addComponent(Emisora6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(242, 656, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
+                .addGap(215, 215, 215)
                 .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -239,11 +248,10 @@ public class Radio extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addComponent(jButton2))
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton2)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
@@ -268,9 +276,7 @@ public class Radio extends javax.swing.JFrame {
                     .addComponent(Emisora11)
                     .addComponent(Emisora12))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                .addComponent(jButton4)
                 .addContainerGap(463, Short.MAX_VALUE))
         );
 
@@ -278,71 +284,105 @@ public class Radio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+   
+        if (power) {                        
+            
+            float frecuencia = Float.parseFloat(jLabel1.getText());                      
+            
+            frecuencia = radio.siguiente(frecuencia);   
+            
+            jLabel1.setText(Float.toString(frecuencia));                        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
+        if (power) {
+            
+            float frecuencia = Float.parseFloat(jLabel1.getText());            
+            
+            frecuencia = radio.anterior(frecuencia);   
+            
+            jLabel1.setText(Float.toString(frecuencia));                       
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Emisora1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora1ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(0);
+        
     }//GEN-LAST:event_Emisora1ActionPerformed
 
     private void Emisora2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora2ActionPerformed
-        // TODO add your handling code here:
+        
+        obtenerGuardada(1);
     }//GEN-LAST:event_Emisora2ActionPerformed
 
     private void Emisora3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora3ActionPerformed
-        // TODO add your handling code here:
+        
+        obtenerGuardada(2);
     }//GEN-LAST:event_Emisora3ActionPerformed
 
     private void Emisora4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora4ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(3);
+        
     }//GEN-LAST:event_Emisora4ActionPerformed
 
     private void Emisora5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora5ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(4);
+        
     }//GEN-LAST:event_Emisora5ActionPerformed
 
     private void Emisora6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora6ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(5);
+        
     }//GEN-LAST:event_Emisora6ActionPerformed
 
     private void Emisora7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora7ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(6);
+        
     }//GEN-LAST:event_Emisora7ActionPerformed
 
     private void Emisora8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora8ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(7);
+        
     }//GEN-LAST:event_Emisora8ActionPerformed
 
     private void Emisora9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora9ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(8);
+        
     }//GEN-LAST:event_Emisora9ActionPerformed
 
     private void Emisora10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora10ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(9);
     }//GEN-LAST:event_Emisora10ActionPerformed
 
     private void Emisora11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora11ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(10);
     }//GEN-LAST:event_Emisora11ActionPerformed
 
     private void Emisora12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emisora12ActionPerformed
-        // TODO add your handling code here:
+        obtenerGuardada(11);
     }//GEN-LAST:event_Emisora12ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-               
-        cont1++;
-        if (cont1 ==1) {
-            radio.Switch(true);
+                      
+        if (power) {  
             
-        }
-        else{
-            radio.Switch(false);
-            cont1=0; 
+            if (AmFm) {
+                
+                radio.Switch(false);
+                jLabel1.setText("87.9");
+                jLabel2.setText("FM");
+                AmFm = false;
+               
+            } else {
+                
+                radio.Switch(true);
+                jLabel1.setText("530");
+                jLabel2.setText("AM");
+                AmFm = true;
+                
+            }                                   
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -350,34 +390,71 @@ public class Radio extends javax.swing.JFrame {
         
         if (power) {
             
-            radio.onOff(false);
+            jButton3.setText("ON");  
+            jLabel1.setText("----");
+            jLabel2.setText("NA"); 
             power = false;
-            jButton3.setText("ON");
+            radio.onOff(false);                        
             
         } else {
             
             jButton3.setText("OFF");
-            System.out.println("RADIO PRENDIDA\n");
+            jLabel1.setText("87.9");
+            jLabel2.setText("FM");            
             power = true;   
             radio.onOff(true);
                                      
         }
-
-//        cont++;
-//        if (cont ==1) {
-//            radio.onOff(true);
-//        }
-//        else{
-//            radio.onOff(false);
-//            cont=0; 
-//        }
-                
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void Emisora1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora1MouseClicked
+        
+/*
+ * Esta linea de comandos funciona mediante la accion de doble click hacia el boton en donde se quiere guardar la emisora.
+ * Dicho codigo fue creado mediante la ayuda de Stack Overflow, el link de donde fue obtenido es:
+ * https://stackoverflow.com/questions/8409347/mouse-event-with-double-click-in-java       
+ */
+        if (power) {
+                   
+            if (evt.getClickCount()==2 && !evt.isConsumed()) {
+                evt.consume();
+
+                float frecuencia = Float.parseFloat(jLabel1.getText());
+
+                radio.guardar(frecuencia, 0);                
+
+                JOptionPane.showMessageDialog(this, "Estacion guardada");
+            }        
+        }
+    }//GEN-LAST:event_Emisora1MouseClicked
+
+    private void Emisora2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora2MouseClicked
+
+    }//GEN-LAST:event_Emisora2MouseClicked
+
+    private void Emisora3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora3MouseClicked
+
+    }//GEN-LAST:event_Emisora3MouseClicked
+
+    public void obtenerGuardada(int boton){
+        
+        if (power) {
+            
+            float frecuenciaGuardada = radio.seleccionarFav(boton);
+            
+            if (frecuenciaGuardada!=0) {
+                
+                jLabel1.setText(frecuenciaGuardada+"");                
+            }
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) {        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -405,7 +482,7 @@ public class Radio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Radio().setVisible(true);
-            }
+            }            
         });
     }
 
@@ -426,7 +503,6 @@ public class Radio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

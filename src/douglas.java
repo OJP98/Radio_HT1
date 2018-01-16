@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * interfaz del programa
+ * @author: Oscar Juárez - 17315; Josue Florian - 17
+ * @version: 19.01.18
+ * Algoritmos y Estructura de Datos - seccion: 10
  */
 
-/**
- *
- * @author JUMPSTONIK
- */
 public interface douglas {
     
     public void onOff(boolean estado);
