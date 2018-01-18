@@ -9,12 +9,16 @@ public class RadioCongfi implements douglas {
 
     private boolean OnOff;
     private boolean AmFm;
+    private float ultimaFM;
+    private float ultimaAM;
     private float[] favoritoAm = new float[12];
     private float[] favoritosFm = new float[12];
     
     public RadioCongfi(){
         OnOff = false;
         AmFm = false;
+        ultimaFM = (float) 89.7;
+        ultimaAM = 530;
         
         // Si AmFm es falso = FM
         // Si AmFm es verdadero = AM
@@ -24,10 +28,23 @@ public class RadioCongfi implements douglas {
         OnOff = estado;
     }
     
-    public void Switch(boolean tipo){
-        if (OnOff == true) {
-            AmFm = tipo;
-        }   
+    public float Switch(){
+        
+        float frecuencia;
+        
+        AmFm = !(AmFm);                
+        
+        if (AmFm) {
+            
+            frecuencia = ultimaAM;            
+            
+        } else {
+            
+            frecuencia = ultimaFM;
+            
+        }                                                 
+        
+        return frecuencia;
     }
     
     public float siguiente(float frecuencia){                
@@ -44,8 +61,9 @@ public class RadioCongfi implements douglas {
                     
                     frecuencia = 530;
                     
-                }
-                
+                }                
+                ultimaAM = frecuencia;                 
+                               
             } else {
                 
                 if (frecuencia < 107.9) {
@@ -56,7 +74,9 @@ public class RadioCongfi implements douglas {
                 } else {
                     
                     frecuencia = (float) 87.9;
-                }            
+                }  
+                
+                ultimaFM = frecuencia;                                
             }          
         }                
         

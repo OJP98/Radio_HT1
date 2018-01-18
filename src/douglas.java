@@ -9,7 +9,7 @@ public interface douglas {
     
     public void onOff(boolean estado);
     
-    public void Switch(boolean tipo);
+    public float Switch();
         
     public float siguiente(float frecuencia);
     
