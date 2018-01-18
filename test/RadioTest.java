@@ -46,7 +46,7 @@ public class RadioTest {
         
         float frecuenciaFM = (float) 87.9;        
         
-        Radio.onOff(true);
+        Radio.onOff();
         float retorno1 = Radio.siguiente(frecuenciaFM);
         float respuesta1 = (float) (frecuenciaFM + 0.2);
                 
@@ -59,7 +59,7 @@ public class RadioTest {
         
         float frecuenciaAM = (float) 1610.0;
         
-        Radio.onOff(true);
+        Radio.onOff();
         Radio.Switch();
         float retorno2 = Radio.siguiente(frecuenciaAM);
         float respuesta2 = (float) 530.0;
@@ -73,7 +73,7 @@ public class RadioTest {
         
         float frecuencia = (float) 87.9;
         
-        Radio.onOff(true);
+        Radio.onOff();
         float anterior = Radio.anterior(frecuencia);
         float respuesta = (float) 107.9;
         
@@ -86,10 +86,10 @@ public class RadioTest {
         
         float frecuencia = (float) 560;
         
-        Radio.onOff(true);
+        Radio.onOff();
         Radio.Switch();
         float anterior = Radio.anterior(frecuencia);
-        float respuesta = (float) 550;
+        float respuesta = frecuencia-10;
         
         assertEquals(respuesta,anterior,0);
         
@@ -104,7 +104,7 @@ public class RadioTest {
         float respuesta = 0;
         
         //En esta simulacion, el usuario guarda la estacion 98.7 en el boton 4.
-        Radio.onOff(true);
+        Radio.onOff();
         Radio.guardar(frecuenciaGuardada, botonApretado);
         
         respuesta = Radio.seleccionarFav(botonApretado);

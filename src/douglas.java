@@ -7,7 +7,7 @@
 
 public interface douglas {
     
-    public void onOff(boolean estado);
+    public void onOff();
     
     public float Switch();
         

@@ -19,13 +19,18 @@ public class RadioCongfi implements douglas {
         AmFm = false;
         ultimaFM = (float) 89.7;
         ultimaAM = 530;
+        for (int i = 0; i < 12; i++) {
+            favoritosFm[i] = (float)87.9;
+            favoritoAm[i] = (float)530.0;
+        }
         
         // Si AmFm es falso = FM
         // Si AmFm es verdadero = AM
         
     }
-    public void onOff(boolean estado){              
-        OnOff = estado;
+    public void onOff(){              
+        OnOff = !(OnOff);
+        AmFm = false;
     }
     
     public float Switch(){
@@ -117,7 +122,7 @@ public class RadioCongfi implements douglas {
     }
     
     /**
-     * 
+     * Metodo que guarda una frecuencia especifica en una posicion de las listas de radio.
      * @param frecuencia: la frecuencia que se quiere guardar
      * @param boton: el boton en donde se quiere guardar la frecuencia
      */
