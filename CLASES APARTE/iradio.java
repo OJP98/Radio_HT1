@@ -5,7 +5,7 @@
  * Algoritmos y Estructura de Datos - seccion: 10
  */
 
-public interface douglas {
+public interface iradio {
     
     public void onOff();
     

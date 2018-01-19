@@ -5,7 +5,7 @@
  * Algoritmos y Estructura de Datos - seccion: 10
  */
 
-public class RadioCongfi implements douglas {
+public class RadioCongfi implements iradio {
 
     private boolean OnOff;
     private boolean AmFm;
@@ -14,6 +14,9 @@ public class RadioCongfi implements douglas {
     private float[] favoritoAm = new float[12];
     private float[] favoritosFm = new float[12];
     
+    /**
+     * El constructor de la clase
+     */
     public RadioCongfi(){
         OnOff = false;
         AmFm = false;
