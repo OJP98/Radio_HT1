@@ -47,7 +47,6 @@ public class Radio extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +73,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Emisora1MouseEntered(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 Emisora1MousePressed(evt);
             }
@@ -97,6 +99,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Emisora2MouseEntered(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora2MousePressed(evt);
+            }
         });
         Emisora2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +117,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Emisora3MouseEntered(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora3MousePressed(evt);
+            }
         });
         Emisora3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,8 +129,14 @@ public class Radio extends javax.swing.JFrame {
 
         Emisora4.setText("4");
         Emisora4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Emisora4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Emisora4MouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora4MousePressed(evt);
             }
         });
         Emisora4.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +150,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora5MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora5MousePressed(evt);
+            }
         });
         Emisora5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +164,9 @@ public class Radio extends javax.swing.JFrame {
         Emisora6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora6MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora6MousePressed(evt);
             }
         });
         Emisora6.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +180,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora7MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora7MousePressed(evt);
+            }
         });
         Emisora7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +194,9 @@ public class Radio extends javax.swing.JFrame {
         Emisora8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora8MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora8MousePressed(evt);
             }
         });
         Emisora8.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +210,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora9MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora9MousePressed(evt);
+            }
         });
         Emisora9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +224,9 @@ public class Radio extends javax.swing.JFrame {
         Emisora10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora10MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora10MousePressed(evt);
             }
         });
         Emisora10.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +240,9 @@ public class Radio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora11MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora11MousePressed(evt);
+            }
         });
         Emisora11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +254,9 @@ public class Radio extends javax.swing.JFrame {
         Emisora12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Emisora12MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Emisora12MousePressed(evt);
             }
         });
         Emisora12.addActionListener(new java.awt.event.ActionListener() {
@@ -241,13 +279,6 @@ public class Radio extends javax.swing.JFrame {
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setText("Set");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
             }
         });
 
@@ -274,21 +305,19 @@ public class Radio extends javax.swing.JFrame {
                             .addComponent(Emisora1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Emisora7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Emisora8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Emisora2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Emisora8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Emisora2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Emisora3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Emisora9, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jButton4)))
-                        .addGap(5, 5, 5)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton4))
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Emisora3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Emisora9, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(5, 5, 5)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Emisora10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Emisora4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -301,8 +330,7 @@ public class Radio extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Emisora5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Emisora6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(Emisora6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -337,9 +365,7 @@ public class Radio extends javax.swing.JFrame {
                     .addComponent(Emisora11)
                     .addComponent(Emisora12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                .addComponent(jButton4)
                 .addContainerGap(130, Short.MAX_VALUE))
         );
 
@@ -471,12 +497,7 @@ public class Radio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void Emisora1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora1MouseClicked
-        if (evt.isShiftDown()) {
-            
-            guardarEstacion(0);
 
-        }        
-        
     }//GEN-LAST:event_Emisora1MouseClicked
 
     private void Emisora2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora2MouseClicked
@@ -491,12 +512,12 @@ public class Radio extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Emisora1KeyPressed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-                       
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void Emisora1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora1MousePressed
+        if (evt.isShiftDown()) {
+            
+            guardarEstacion(0);
 
+        }  
     }//GEN-LAST:event_Emisora1MousePressed
 
     private void Emisora2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora2MouseEntered
@@ -512,68 +533,132 @@ public class Radio extends javax.swing.JFrame {
     }//GEN-LAST:event_Emisora4MouseEntered
 
     private void Emisora5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora5MouseClicked
+
+    }//GEN-LAST:event_Emisora5MouseClicked
+
+    private void Emisora6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora6MouseClicked
+
+    }//GEN-LAST:event_Emisora6MouseClicked
+
+    private void Emisora7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora7MouseClicked
+
+    }//GEN-LAST:event_Emisora7MouseClicked
+
+    private void Emisora8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora8MouseClicked
+
+    }//GEN-LAST:event_Emisora8MouseClicked
+
+    private void Emisora9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora9MouseClicked
+
+    }//GEN-LAST:event_Emisora9MouseClicked
+
+    private void Emisora10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora10MouseClicked
+
+    }//GEN-LAST:event_Emisora10MouseClicked
+
+    private void Emisora11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora11MouseClicked
+
+    }//GEN-LAST:event_Emisora11MouseClicked
+
+    private void Emisora12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora12MouseClicked
+
+    }//GEN-LAST:event_Emisora12MouseClicked
+
+    private void Emisora4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora4MouseClicked
+
+    }//GEN-LAST:event_Emisora4MouseClicked
+
+    private void Emisora1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Emisora1MouseEntered
+
+    private void Emisora2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora2MousePressed
+        if (evt.isShiftDown()) {
+            
+            guardarEstacion(1);
+
+        }  
+    }//GEN-LAST:event_Emisora2MousePressed
+
+    private void Emisora3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora3MousePressed
+        if (evt.isShiftDown()) {
+            
+            guardarEstacion(2);
+
+        } 
+    }//GEN-LAST:event_Emisora3MousePressed
+
+    private void Emisora4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora4MousePressed
+        if (evt.isShiftDown()) {
+            
+            guardarEstacion(3);
+
+        }
+    }//GEN-LAST:event_Emisora4MousePressed
+
+    private void Emisora5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora5MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(4);
 
         }
-    }//GEN-LAST:event_Emisora5MouseClicked
+    }//GEN-LAST:event_Emisora5MousePressed
 
-    private void Emisora6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora6MouseClicked
+    private void Emisora6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora6MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(5);
 
         }
-    }//GEN-LAST:event_Emisora6MouseClicked
+    }//GEN-LAST:event_Emisora6MousePressed
 
-    private void Emisora7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora7MouseClicked
+    private void Emisora7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora7MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(6);
 
         }
-    }//GEN-LAST:event_Emisora7MouseClicked
+    }//GEN-LAST:event_Emisora7MousePressed
 
-    private void Emisora8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora8MouseClicked
+    private void Emisora8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora8MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(7);
 
         }
-    }//GEN-LAST:event_Emisora8MouseClicked
+    }//GEN-LAST:event_Emisora8MousePressed
 
-    private void Emisora9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora9MouseClicked
+    private void Emisora9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora9MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(8);
 
-        }
-    }//GEN-LAST:event_Emisora9MouseClicked
+        }  
+    }//GEN-LAST:event_Emisora9MousePressed
 
-    private void Emisora10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora10MouseClicked
+    private void Emisora10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora10MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(9);
 
         }
-    }//GEN-LAST:event_Emisora10MouseClicked
+    }//GEN-LAST:event_Emisora10MousePressed
 
-    private void Emisora11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora11MouseClicked
+    private void Emisora11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora11MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(10);
 
         }
-    }//GEN-LAST:event_Emisora11MouseClicked
+    }//GEN-LAST:event_Emisora11MousePressed
 
-    private void Emisora12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora12MouseClicked
+    private void Emisora12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Emisora12MousePressed
         if (evt.isShiftDown()) {
             
             guardarEstacion(11);
 
-        }
-    }//GEN-LAST:event_Emisora12MouseClicked
+        } 
+    }//GEN-LAST:event_Emisora12MousePressed
 
     public void obtenerGuardada(int boton){
         
@@ -656,7 +741,6 @@ public class Radio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
