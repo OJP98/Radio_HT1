@@ -28,11 +28,17 @@ public class RadioCongfi implements douglas {
         // Si AmFm es verdadero = AM
         
     }
+    /**
+     * esta funcion se encarga de encender el radio
+     */
     public void onOff(){              
         OnOff = !(OnOff);
         AmFm = false;
     }
-    
+    /**
+     * esta funcion se encarga de poner el radio en am o fm
+     * @return el valor de encendido o apagado
+     */
     public float Switch(){
         
         float frecuencia;
@@ -51,7 +57,12 @@ public class RadioCongfi implements douglas {
         
         return frecuencia;
     }
-    
+    /**
+     * esta funcion se encarga de regresar a una frecuencia de -10 en am o 0.2 en fm al precionar
+     * el boton de anterior
+     * @param frecuencia
+     * @return regresa +10 a la frecuencia actual o +0.2
+     */
     public float siguiente(float frecuencia){                
         
         if (OnOff) {
@@ -87,7 +98,12 @@ public class RadioCongfi implements douglas {
         
         return frecuencia;
     }
-    
+    /**
+     * esta funcion se encarga de regresar a una frecuencia de -10 en am o 0.2 en fm al precionar
+     * el boton de anterior
+     * @param frecuencia
+     * @return regresa -10 a la frecuencia actual o +0.2
+     */
     public float anterior(float frecuencia){
         
         if (OnOff) {

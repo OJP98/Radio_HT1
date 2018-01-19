@@ -659,7 +659,10 @@ public class Radio extends javax.swing.JFrame {
 
         } 
     }//GEN-LAST:event_Emisora12MousePressed
-
+    /**
+     * esta funcion se encarga de poder ir a la frecuencia guardada en el boton
+     * @param boton numero del boton
+     */
     public void obtenerGuardada(int boton){
         
         if (power) {
